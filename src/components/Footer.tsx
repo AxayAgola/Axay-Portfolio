@@ -35,7 +35,7 @@ const Footer = () => {
           <p className="text-muted-foreground mb-6">
             Make Something New Inovation.
           </p>
-          <div className="flex justify-center space-x-6 mb-6">
+          <div className="flex justify-center space-x-2 mb-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
