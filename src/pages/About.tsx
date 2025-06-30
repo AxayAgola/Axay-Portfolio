@@ -87,7 +87,6 @@ const About = () => {
                 src="/images/Boy1.png"
                 alt="UI/UX design projects and wireframes"
                 className="rounded-2xl w-full"
-                {/*className="rounded-4xl ml-40 mb-20 w-240 l-20" */}
               />
 
               <motion.div
