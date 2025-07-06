@@ -80,7 +80,7 @@ export const projects: Project[] = [
     description:
       "This project implements a secure user authentication system using ASP.NET Core Web API for the backend and a modern HTML/CSS/JavaScript frontend. It supports JWT-based login and registration, along with role-based authorization.",
     category: "development",
-    tags: ["Devlopment", "Web"],
+    tags: ["Devlopment", "Full-Stack"],
     image:
       "/images/jwt.jpg",
     link: "#",
