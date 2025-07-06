@@ -76,6 +76,17 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    title: "JWT Authentication",
+    description:
+      "This project implements a secure user authentication system using ASP.NET Core Web API for the backend and a modern HTML/CSS/JavaScript frontend. It supports JWT-based login and registration, along with role-based authorization.",
+    category: "development",
+    tags: ["Devlopment", "Web"],
+    image:
+      "/images/jwt.jpg",
+    link: "#",
+  },
+  {
+    id: 4,
     title: "E-Learning Platform Design",
     description:
       "Clean and intuitive dashboard design for personal E-Leaarning application.",
@@ -86,7 +97,7 @@ export const projects: Project[] = [
     link: "#",
   },
 ];
-
+https://github.com/AxayAgola/JWT-Authentication
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
