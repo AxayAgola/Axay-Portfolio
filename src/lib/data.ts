@@ -97,7 +97,6 @@ export const projects: Project[] = [
     link: "#",
   },
 ];
-https://github.com/AxayAgola/JWT-Authentication
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
