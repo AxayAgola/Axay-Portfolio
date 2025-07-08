@@ -72,24 +72,23 @@ export const projects: Project[] = [
     category: "development",
     tags: ["Development", "Full-Stack"],
     image: "/images/elearning.jpg",
-    link: "#",
+    link: "https://github.com/AxayAgola/E_Learning_Platform",
   },
   {
     id: 3,
     title: "JWT Authentication",
     description:
-      "This project implements a secure user authentication system using ASP.NET Core Web API for the backend and a modern HTML/CSS/JavaScript frontend. It supports JWT-based login and registration, along with role-based authorization.",
+      "This system using ASP.NET Core Web API for the backend and a modern HTML/CSS/JavaScript frontend. It supports JWT-based login and registration, along with role-based authorization.",
     category: "development",
     tags: ["Devlopment", "Full-Stack"],
-    image:
-      "/images/jwt.jpg",
+    image: "/images/jwt.jpg",
     link: "https://github.com/AxayAgola/JWT-Authentication",
   },
   {
     id: 4,
     title: "E-Learning Platform Design",
     description:
-      "Clean and intuitive dashboard design for personal E-Leaarning application.",
+      "Clean and intuitive dashboard design for personal E-Learning application.",
     category: "ui-ux",
     tags: ["UI/UX", "Web"],
     image:
@@ -97,6 +96,7 @@ export const projects: Project[] = [
     link: "#",
   },
 ];
+
 export const blogPosts: BlogPost[] = [
   {
     id: 1,

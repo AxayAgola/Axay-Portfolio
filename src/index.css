@@ -46,6 +46,27 @@
   --destructive-foreground: 0 0% 98%;
   --ring: 248 53% 58%; /* #8B5CF6 */
 }
+.light {
+  --background: 0 0% 100%; /* #ffffff */
+  --foreground: 240 10% 4%; /* #0a0a0a */
+  --muted: 240 4% 95%; /* #f3f3f3 */
+  --muted-foreground: 240 5% 30%; /* #4a4a4a */
+  --popover: 0 0% 100%; /* #ffffff */
+  --popover-foreground: 240 10% 4%; /* #0a0a0a */
+  --card: 0 0% 100%; /* #ffffff */
+  --card-foreground: 240 10% 4%; /* #0a0a0a */
+  --border: 240 5% 90%; /* #e5e5e5 */
+  --input: 240 6% 96%; /* #f5f5f5 */
+  --primary: 248 53% 58%; /* #8B5CF6 (unchanged) */
+  --primary-foreground: 0 0% 100%; /* #ffffff */
+  --secondary: 240 5% 96%; /* #f6f6f6 */
+  --secondary-foreground: 240 5% 30%; /* #4a4a4a */
+  --accent: 217 91% 60%; /* #3B82F6 (unchanged) */
+  --accent-foreground: 0 0% 100%; /* #ffffff */
+  --destructive: 0 84% 60%; /* #ef4444 (red-500) */
+  --destructive-foreground: 0 0% 100%; /* #ffffff */
+  --ring: 248 53% 58%; /* #8B5CF6 (same as primary) */
+}
 
 @layer base {
   * {

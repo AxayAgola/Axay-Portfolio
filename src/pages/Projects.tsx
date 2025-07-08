@@ -31,7 +31,8 @@ const Projects = () => {
               Featured <span className="text-gradient">Projects</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Explore my latest work spanning UI/UX design and full-stack development projects.
+              Explore my latest work spanning UI/UX design and full-stack
+              development projects.
             </p>
           </motion.div>
 
@@ -61,7 +62,7 @@ const Projects = () => {
           </motion.div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}

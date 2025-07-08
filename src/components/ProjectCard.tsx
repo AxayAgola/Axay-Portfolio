@@ -36,16 +36,19 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </p>
         <Button
           variant="ghost"
-          className="text-primary hover:text-accent-foreground p-0 h-auto"
+          className="text-primary hover:text-accent-foreground p-2 h-auto flex items-center"
+          onClick={() => window.open(project.link, "_blank")}
         >
           {project.category === "development"
             ? "View Project"
             : "View Case Study"}
-          {project.category === "development" ? (
-            <ExternalLink className="ml-2 h-4 w-4" />
-          ) : (
-            <ArrowRight className="ml-2 h-4 w-4" />
-          )}
+          <span className="ml-2 h-4 w-4">
+            {project.category === "development" ? (
+              <ExternalLink className="h-4 w-4" />
+            ) : (
+              <ArrowRight className="h-4 w-4" />
+            )}
+          </span>
         </Button>
       </CardContent>
     </Card>

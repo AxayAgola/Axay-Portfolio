@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Sun, Moon } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const navItems = [
     { href: "/", label: "Home" },
@@ -61,6 +63,19 @@ const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Toggle Theme"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="ml-2 transition-colors"
+              >
+                {theme === "dark" ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </Button>
             </div>
           </div>
 

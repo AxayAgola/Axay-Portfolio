@@ -8,6 +8,9 @@ import {
   SiNextdotjs,
   SiSqlite,
   SiDotnet,
+  SiAdobephotoshop,
+  SiAdobelightroom,
+  SiCanva,
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 
@@ -20,6 +23,9 @@ const About = () => {
     { icon: SiReact, name: "React", color: "text-blue-400" },
     { icon: SiNodedotjs, name: "Node.js", color: "text-green-500" },
     { icon: SiFigma, name: "Figma", color: "text-purple-400" },
+    { icon: SiAdobephotoshop, name: "Photoshop", color: "text-blue-400" },
+    { icon: SiAdobelightroom, name: "Lightroom", color: "text-blue-400" },
+    { icon: SiCanva, name: "Canva", color: "text-gradient-400" },
   ];
 
   return (
@@ -84,8 +90,9 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <img
-                src="/images/Boy1.png"
+                src="/images/boy2.png"
                 alt="UI/UX design projects and wireframes"
+                // className="rounded-4xl ml-40 mb-20 w-40 l-20"
                 className="rounded-2xl w-full"
               />
 
@@ -107,7 +114,7 @@ const About = () => {
               </motion.div>
             </motion.div>
             <motion.a
-              href="/Axay-Resume.pdf"
+              href="/images/Axay-Resume.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -135,6 +142,9 @@ const About = () => {
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
               A timeline of my career highlights and key achievements
             </p>
+            <p className="text-gradient text-lg max-w-3xl mx-auto">
+              My Work Experience
+            </p>
           </motion.div>
 
           <div className="space-y-8">
@@ -143,6 +153,7 @@ const About = () => {
                 year: "Jan-April 2025",
                 role: "Full-Stack Developer Intern",
                 company: "Knovos India Pvt. Ltd.",
+                Technology: "Asp.net, SQL Server",
                 description:
                   "Built  RESTful  APIs  for  data  handling  and  integrated  front-endcomponents with Extjs." +
                   "Developed a robust backend system for automatedingestion,  extraction,  and  metadata  storage  ofeDiscovery files (.PST, .MSG, .EML, PDF, ZIP, etc.).Implemented  multithreaded  Worker  Service  toprocess  files  in  batches  (1000  files/job),  extractattachments recursively, and prevent duplicates.Stored file metadata and relationships (e.g., parent-child) in SQL Server using ADO.NET.Enabled  real-time  monitoring  and  job  tracking  forlegal  compliance,  achieving  90%  faster  processingand handling 1M+ files.",

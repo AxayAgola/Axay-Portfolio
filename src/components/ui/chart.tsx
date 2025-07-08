@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // "use client"
 
 // import * as React from "react"
@@ -32,11 +33,47 @@
 //   }
 
 //   return context
+=======
+// "use client";
+
+// import * as React from "react";
+// import * as RechartsPrimitive from "recharts";
+
+// import { cn } from "@/lib/utils";
+
+// const THEMES = { light: "", dark: ".dark" } as const;
+
+// export type ChartConfig = {
+//   [k in string]: {
+//     label?: React.ReactNode;
+//     icon?: React.ComponentType;
+//   } & (
+//     | { color?: string; theme?: never }
+//     | { color?: never; theme: Record<keyof typeof THEMES, string> }
+//   );
+// };
+
+// type ChartContextProps = {
+//   config: ChartConfig;
+// };
+
+// const ChartContext = React.createContext<ChartContextProps | null>(null);
+
+// function useChart() {
+//   const context = React.useContext(ChartContext);
+
+//   if (!context) {
+//     throw new Error("useChart must be used within a <ChartContainer />");
+//   }
+
+//   return context;
+>>>>>>> 093acbd (origin)
 // }
 
 // const ChartContainer = React.forwardRef<
 //   HTMLDivElement,
 //   React.ComponentProps<"div"> & {
+<<<<<<< HEAD
 //     config: ChartConfig
 //     children: React.ComponentProps<
 //       typeof RechartsPrimitive.ResponsiveContainer
@@ -45,6 +82,16 @@
 // >(({ id, className, children, config, ...props }, ref) => {
 //   const uniqueId = React.useId()
 //   const chartId = `chart-${id || uniqueId.replace(/:/g, "")}`
+=======
+//     config: ChartConfig;
+//     children: React.ComponentProps<
+//       typeof RechartsPrimitive.ResponsiveContainer
+//     >["children"];
+//   }
+// >(({ id, className, children, config, ...props }, ref) => {
+//   const uniqueId = React.useId();
+//   const chartId = `chart-${id || uniqueId.replace(/:/g, "")}`;
+>>>>>>> 093acbd (origin)
 
 //   return (
 //     <ChartContext.Provider value={{ config }}>
@@ -63,17 +110,30 @@
 //         </RechartsPrimitive.ResponsiveContainer>
 //       </div>
 //     </ChartContext.Provider>
+<<<<<<< HEAD
 //   )
 // })
 // ChartContainer.displayName = "Chart"
+=======
+//   );
+// });
+// ChartContainer.displayName = "Chart";
+>>>>>>> 093acbd (origin)
 
 // const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
 //   const colorConfig = Object.entries(config).filter(
 //     ([, config]) => config.theme || config.color
+<<<<<<< HEAD
 //   )
 
 //   if (!colorConfig.length) {
 //     return null
+=======
+//   );
+
+//   if (!colorConfig.length) {
+//     return null;
+>>>>>>> 093acbd (origin)
 //   }
 
 //   return (
@@ -87,30 +147,53 @@
 //   .map(([key, itemConfig]) => {
 //     const color =
 //       itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
+<<<<<<< HEAD
 //       itemConfig.color
 //     return color ? `  --color-${key}: ${color};` : null
 //   })
 //   .join("\n")}
 // }
 // `
+=======
+//       itemConfig.color;
+//     return color ? `  --color-${key}: ${color};` : null;
+//   })
+//   .join("\n")}
+// }`
+>>>>>>> 093acbd (origin)
 //           )
 //           .join("\n"),
 //       }}
 //     />
+<<<<<<< HEAD
 //   )
 // }
 
 // const ChartTooltip = RechartsPrimitive.Tooltip
+=======
+//   );
+// };
+
+// const ChartTooltip = RechartsPrimitive.Tooltip;
+>>>>>>> 093acbd (origin)
 
 // const ChartTooltipContent = React.forwardRef<
 //   HTMLDivElement,
 //   React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
 //     React.ComponentProps<"div"> & {
+<<<<<<< HEAD
 //       hideLabel?: boolean
 //       hideIndicator?: boolean
 //       indicator?: "line" | "dot" | "dashed"
 //       nameKey?: string
 //       labelKey?: string
+=======
+//       hideLabel?: boolean;
+//       hideIndicator?: boolean;
+//       indicator?: "line" | "dot" | "dashed";
+//       nameKey?: string;
+//       labelKey?: string;
+>>>>>>> 093acbd (origin)
 //     }
 // >(
 //   (
@@ -131,6 +214,7 @@
 //     },
 //     ref
 //   ) => {
+<<<<<<< HEAD
 //     const { config } = useChart()
 
 //     const tooltipLabel = React.useMemo(() => {
@@ -145,12 +229,29 @@
 //         !labelKey && typeof label === "string"
 //           ? config[label as keyof typeof config]?.label || label
 //           : itemConfig?.label
+=======
+//     const { config } = useChart();
+
+//     const tooltipLabel = React.useMemo(() => {
+//       if (hideLabel || !Array.isArray(payload) || !payload.length) {
+//         return null;
+//       }
+
+//       const [item] = payload;
+//       const key = `${labelKey || item?.dataKey || item?.name || "value"}`;
+//       const itemConfig = getPayloadConfigFromPayload(config, item, key);
+//       const value =
+//         !labelKey && typeof label === "string"
+//           ? config[label as keyof typeof config]?.label || label
+//           : itemConfig?.label;
+>>>>>>> 093acbd (origin)
 
 //       if (labelFormatter) {
 //         return (
 //           <div className={cn("font-medium", labelClassName)}>
 //             {labelFormatter(value, payload)}
 //           </div>
+<<<<<<< HEAD
 //         )
 //       }
 
@@ -159,6 +260,16 @@
 //       }
 
 //       return <div className={cn("font-medium", labelClassName)}>{value}</div>
+=======
+//         );
+//       }
+
+//       if (!value) {
+//         return null;
+//       }
+
+//       return <div className={cn("font-medium", labelClassName)}>{value}</div>;
+>>>>>>> 093acbd (origin)
 //     }, [
 //       label,
 //       labelFormatter,
@@ -167,6 +278,7 @@
 //       labelClassName,
 //       config,
 //       labelKey,
+<<<<<<< HEAD
 //     ])
 
 //     if (!active || !payload?.length) {
@@ -174,6 +286,15 @@
 //     }
 
 //     const nestLabel = payload.length === 1 && indicator !== "dot"
+=======
+//     ]);
+
+//     if (!active || !Array.isArray(payload) || !payload.length) {
+//       return null;
+//     }
+
+//     const nestLabel = payload.length === 1 && indicator !== "dot";
+>>>>>>> 093acbd (origin)
 
 //     return (
 //       <div
@@ -185,6 +306,7 @@
 //       >
 //         {!nestLabel ? tooltipLabel : null}
 //         <div className="grid gap-1.5">
+<<<<<<< HEAD
 //           {payload.map((item, index) => {
 //             const key = `${nameKey || item.name || item.dataKey || "value"}`
 //             const itemConfig = getPayloadConfigFromPayload(config, item, key)
@@ -193,6 +315,16 @@
 //             return (
 //               <div
 //                 key={item.dataKey}
+=======
+//           {payload.map((item: any, index) => {
+//             const key = `${nameKey || item.name || item.dataKey || "value"}`;
+//             const itemConfig = getPayloadConfigFromPayload(config, item, key);
+//             const indicatorColor = color || item.payload?.fill || item.color;
+
+//             return (
+//               <div
+//                 key={item.dataKey as React.Key}
+>>>>>>> 093acbd (origin)
 //                 className={cn(
 //                   "flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground",
 //                   indicator === "dot" && "items-center"
@@ -247,6 +379,7 @@
 //                   </>
 //                 )}
 //               </div>
+<<<<<<< HEAD
 //             )
 //           })}
 //         </div>
@@ -265,15 +398,43 @@
 //       hideIcon?: boolean
 //       nameKey?: string
 //     }
+=======
+//             );
+//           })}
+//         </div>
+//       </div>
+//     );
+//   }
+// );
+// ChartTooltipContent.displayName = "ChartTooltip";
+
+// const ChartLegend = RechartsPrimitive.Legend;
+
+// const ChartLegendContent = React.forwardRef<
+//   HTMLDivElement,
+//   React.ComponentProps<"div"> & {
+//     payload?: RechartsPrimitive.LegendProps["payload"];
+//     verticalAlign?: "top" | "middle" | "bottom";
+//     hideIcon?: boolean;
+//     nameKey?: string;
+//   }
+>>>>>>> 093acbd (origin)
 // >(
 //   (
 //     { className, hideIcon = false, payload, verticalAlign = "bottom", nameKey },
 //     ref
 //   ) => {
+<<<<<<< HEAD
 //     const { config } = useChart()
 
 //     if (!payload?.length) {
 //       return null
+=======
+//     const { config } = useChart();
+
+//     if (!Array.isArray(payload) || !payload.length) {
+//       return null;
+>>>>>>> 093acbd (origin)
 //     }
 
 //     return (
@@ -285,6 +446,7 @@
 //           className
 //         )}
 //       >
+<<<<<<< HEAD
 //         {payload.map((item) => {
 //           const key = `${nameKey || item.dataKey || "value"}`
 //           const itemConfig = getPayloadConfigFromPayload(config, item, key)
@@ -292,6 +454,15 @@
 //           return (
 //             <div
 //               key={item.value}
+=======
+//         {payload.map((item: any) => {
+//           const key = `${nameKey || item.dataKey || "value"}`;
+//           const itemConfig = getPayloadConfigFromPayload(config, item, key);
+
+//           return (
+//             <div
+//               key={item.value as React.Key}
+>>>>>>> 093acbd (origin)
 //               className={cn(
 //                 "flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground"
 //               )}
@@ -308,6 +479,7 @@
 //               )}
 //               {itemConfig?.label}
 //             </div>
+<<<<<<< HEAD
 //           )
 //         })}
 //       </div>
@@ -317,13 +489,27 @@
 // ChartLegendContent.displayName = "ChartLegend"
 
 // // Helper to extract item config from a payload.
+=======
+//           );
+//         })}
+//       </div>
+//     );
+//   }
+// );
+// ChartLegendContent.displayName = "ChartLegend";
+
+>>>>>>> 093acbd (origin)
 // function getPayloadConfigFromPayload(
 //   config: ChartConfig,
 //   payload: unknown,
 //   key: string
 // ) {
 //   if (typeof payload !== "object" || payload === null) {
+<<<<<<< HEAD
 //     return undefined
+=======
+//     return undefined;
+>>>>>>> 093acbd (origin)
 //   }
 
 //   const payloadPayload =
@@ -331,15 +517,25 @@
 //     typeof payload.payload === "object" &&
 //     payload.payload !== null
 //       ? payload.payload
+<<<<<<< HEAD
 //       : undefined
 
 //   let configLabelKey: string = key
+=======
+//       : undefined;
+
+//   let configLabelKey: string = key;
+>>>>>>> 093acbd (origin)
 
 //   if (
 //     key in payload &&
 //     typeof payload[key as keyof typeof payload] === "string"
 //   ) {
+<<<<<<< HEAD
 //     configLabelKey = payload[key as keyof typeof payload] as string
+=======
+//     configLabelKey = payload[key as keyof typeof payload] as string;
+>>>>>>> 093acbd (origin)
 //   } else if (
 //     payloadPayload &&
 //     key in payloadPayload &&
@@ -347,12 +543,20 @@
 //   ) {
 //     configLabelKey = payloadPayload[
 //       key as keyof typeof payloadPayload
+<<<<<<< HEAD
 //     ] as string
+=======
+//     ] as string;
+>>>>>>> 093acbd (origin)
 //   }
 
 //   return configLabelKey in config
 //     ? config[configLabelKey]
+<<<<<<< HEAD
 //     : config[key as keyof typeof config]
+=======
+//     : config[key as keyof typeof config];
+>>>>>>> 093acbd (origin)
 // }
 
 // export {
@@ -362,4 +566,8 @@
 //   ChartLegend,
 //   ChartLegendContent,
 //   ChartStyle,
+<<<<<<< HEAD
 // }
+=======
+// };
+>>>>>>> 093acbd (origin)
