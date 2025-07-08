@@ -83,7 +83,7 @@ export const projects: Project[] = [
     tags: ["Devlopment", "Full-Stack"],
     image:
       "/images/jwt.jpg",
-    link: "#",
+    link: "https://github.com/AxayAgola/JWT-Authentication",
   },
   {
     id: 4,
