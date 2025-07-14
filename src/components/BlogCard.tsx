@@ -34,11 +34,11 @@ const BlogCard = ({ post }: BlogCardProps) => {
 
         <div className="flex items-center justify-between">
           <span className="text-muted-foreground text-sm">{post.date}</span>
-          <Link href={`/article`}>
-            <Button
-              variant="ghost"
-              className="text-primary hover:text-accent-foreground p-0 h-auto"
-            >
+          <Link
+            href={post.slug ? `/article/${post.slug}` : "#"}
+            className="flex items-center"
+          >
+            <Button disabled={!post.slug}>
               Read More <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
           </Link>

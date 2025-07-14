@@ -12,7 +12,8 @@ import Progress from "@/pages/Progress";
 import Blog from "@/pages/Blog";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
-import Article from "@/pages/Article";
+import Article from "@/pages/Article-Jwt";
+import Life2Article from "./pages/Life-2-Article";
 
 function Router() {
   return (
@@ -26,6 +27,10 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/contact" component={Contact} />
         <Route path="/article" component={Article} />
+        <Route path="/life-2-article" component={Life2Article} />
+        <Route path="/article/:slug" component={Life2Article} />
+        <Route path="/article/:slug" component={Article} />
+
         <Route component={NotFound} />
       </Switch>
       <Footer />
@@ -37,7 +42,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="dark min-h-screen bg-background text-foreground">
+        <div className="white min-h-screen bg-background text-foreground">
           <Toaster />
           <Router />
         </div>

@@ -5,19 +5,27 @@ import {
   Palette,
   Zap,
   Coffee,
+  PenLine,
+  FileText,
   Star,
+  CheckCircle,
+  Clock,
+  Target,
+  TrendingUp,
 } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import { Progress } from "@/components/ui/progress";
 
 const Home = () => {
   const stats = [
     { number: "2+", label: "Projects Completed", icon: Star },
     // { number: "5+", label: "Years Experience", icon: Award },
-    // { number: "30+", label: "Happy Clients", icon: Users },
+    { number: "2+", label: "My Articles", icon: PenLine },
     { number: "∞", label: "Glass of Soda", icon: Coffee },
   ];
 
@@ -380,7 +388,100 @@ const Home = () => {
       //     </div>
       //   </div>
       // </section> */}
+      <motion.div
+        className=""
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
+        <Card className="bg-gradient-to-br from-warning/10 via-card/50 to-accent/10 backdrop-blur-sm border-border/50 overflow-hidden w-full">
+          <CardHeader className="pb-4">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center space-x-6">
+                <div className="w-12 h-12 gradient-accent rounded-full flex items-center justify-center">
+                  <Code className="h-6 w-10 text-white" />
+                </div>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold text-lg">
+                      New Project Progress
+                    </span>
+                    <span className="text-2xl font-bold text-gradient">
+                      65%
+                    </span>
+                  </div>
 
+                  <div className="relative  ">
+                    <Progress value={65} className="h-4 w-50 bg-secondary" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full w-full" />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">
+                        Smart Meta View
+                      </span>
+                      <span className="font-medium">12/16</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Timeline</span>
+                      <span className="font-medium">few months left</span>
+                    </div>
+                  </div>
+                </div>
+
+                <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/80 smooth-transition w-60">
+                  <CardContent className="p-6 text-center">
+                    <Target className="h-8 w-8 text-primary mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-gradient mb-1">
+                      {/* {overallStats.totalProjects}*/}4
+                    </div>
+                    <div className="text-sm text-muted-foreground font-medium">
+                      Total Projects
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/80 smooth-transition w-60">
+                  <CardContent className="p-6 text-center">
+                    <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-green-400 mb-1">
+                      {/* {overallStats.completed} */}2
+                    </div>
+                    <div className="text-sm text-muted-foreground font-medium">
+                      Completed
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/80 smooth-transition w-60">
+                  <CardContent className="p-6 text-center">
+                    <Clock className="h-8 w-8 text-yellow-500 mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-yellow-400 mb-1">
+                      {/* {overallStats.inProgress} */}2
+                    </div>
+                    <div className="text-sm text-muted-foreground font-medium">
+                      In Progress
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/80 smooth-transition w-60">
+                  <CardContent className="p-6 text-center">
+                    <TrendingUp className="h-8 w-8 text-primary mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-gradient mb-1">
+                      {/* {overallStats.averageProgress} */}65%
+                    </div>
+                    <div className="text-sm text-muted-foreground font-medium">
+                      Avg Progress
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </CardHeader>
+        </Card>
+      </motion.div>
       {/* Call to Action Section */}
       <section className="py-20 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />

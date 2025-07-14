@@ -41,45 +41,64 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex-shrink-0 touch-action-manipulation">
-            <span className="text-xl font-bold text-gradient hover:scale-105 smooth-transition">
-              MR.Perfect
-            </span>
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`smooth-transition touch-action-manipulation hover:scale-105 px-3 py-2 rounded-lg ${
-                    isActive(item.href)
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-primary hover:bg-secondary/50"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Button
-                variant="ghost"
-                size="icon"
-                aria-label="Toggle Theme"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="ml-2 transition-colors"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5" />
-                ) : (
-                  <Moon className="w-5 h-5" />
-                )}
-              </Button>
-            </div>
+          {/* Left: Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="touch-action-manipulation">
+              <span className="text-xl font-bold text-gradient hover:scale-105 smooth-transition">
+                MR.Perfect
+              </span>
+            </Link>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Center: Desktop Menu */}
+          <div className="hidden md:flex space-x-6 justify-center">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`smooth-transition touch-action-manipulation hover:scale-105 px-3 py-2 rounded-lg ${
+                  isActive(item.href)
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-primary hover:bg-secondary/50"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right: Auth Buttons */}
+          <div className="hidden md:flex items-center space-x-3">
+            {/* { (
+              <>
+                <span className="text-sm text-muted-foreground">
+                  Hi, {}
+                </span>
+                <Button variant="outline" className="text-sm" onClick={}>
+                  Logout
+                </Button>
+              </>
+            ) : ( */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label="Toggle Theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5" />
+              ) : (
+                <Moon className="w-5 h-5" />
+              )}
+            </Button>
+            <Link href="/contact">
+              <Button className="text-sm">Get Started</Button>
+            </Link>
+
+            {/* )} */}
+          </div>
+
+          {/* Mobile Menu Toggle */}
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -107,6 +126,50 @@ const Navigation = () => {
                       {item.label}
                     </Link>
                   ))}
+                </div>
+
+                {/* Auth for Mobile */}
+                <div className="mt-8 border-t pt-4 flex flex-col space-y-3">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() =>
+                      setTheme(theme === "dark" ? "light" : "dark")
+                    }
+                    aria-label="Toggle Theme"
+                  >
+                    {theme === "dark" ? (
+                      <Sun className="w-5 h-5" />
+                    ) : (
+                      <Moon className="w-5 h-5" />
+                    )}
+                  </Button>
+                  {/* {user ? (
+                    <>
+                      <span className="text-muted-foreground px-4">
+                        Hi, {user}
+                      </span>
+                      <Button
+                        variant="outline"
+                        className="w-full"
+                        onClick={() => {
+                          logout();
+                          setIsOpen(false);
+                        }}
+                      > */}
+                  {/* Logout
+                      </Button>
+                    </>
+                  ) : ( */}
+                  <Link href="/contact">
+                    <Button
+                      variant="outline"
+                      className="w-full"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Get Started
+                    </Button>
+                  </Link>
                 </div>
               </SheetContent>
             </Sheet>

@@ -96,17 +96,28 @@ export const projects: Project[] = [
     link: "#",
   },
 ];
-
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Why do we need JWT? JSON Web Token",
+    slug: "Life2Article",
+    title: "Learn from your past — but don’t let it define your future",
     excerpt:
-      "JSON Web Token (JWT) is a compact, self-contained way of securely transmitting information between two parties as a JSON object. It's commonly used for authentication and authorization in modern web applications.",
-    category: "Development",
+      "A personal growth story about learning from mistakes and moving forward.",
+    category: "Motivation",
+    image: "/images/life-articles.png",
     readTime: "5 min read",
-    date: "June 21, 2025",
-    image: "images/hq720.jpg",
-    slug: "Jwt-Content",
+    date: "July 10, 2025",
   },
+  {
+    id: 2,
+    slug: "Article-Jwt",
+    title: "Why Do We Need JWT? JSON Web Token",
+    excerpt:
+      "JWT is a compact and secure way to transmit data between parties...",
+    category: "Development",
+    image: "/images/jwt.jpg",
+    readTime: "4 min read",
+    date: "July 11, 2025",
+  },
+  // ✅ Make sure each post has a unique slug!
 ];
